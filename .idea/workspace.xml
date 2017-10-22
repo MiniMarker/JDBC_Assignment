@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd29f1cc-a93b-4809-8cff-bde18e782272" name="Default" comment="" />
+    <list default="true" id="fd29f1cc-a93b-4809-8cff-bde18e782272" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/createSubjectTableSql.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/createSubjectTeacherTableSql.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/createTeacherTableSql.sql" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/README.rtf" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/rooms.csv" afterPath="$PROJECT_DIR$/files/rooms.csv" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/subjects.csv" afterPath="$PROJECT_DIR$/files/subjects.csv" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/teachers.csv" afterPath="$PROJECT_DIR$/files/teachers.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DBConnection.class" afterPath="$PROJECT_DIR$/target/classes/DBConnection.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DBHandler.class" afterPath="$PROJECT_DIR$/target/classes/DBHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/InputHandler.class" afterPath="$PROJECT_DIR$/target/classes/InputHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/DBConnectionTest.class" afterPath="$PROJECT_DIR$/target/test-classes/DBConnectionTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DBConnection.java" afterPath="$PROJECT_DIR$/src/main/java/DBConnection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DBHandler.java" afterPath="$PROJECT_DIR$/src/main/java/DBHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/InputHandler.java" afterPath="$PROJECT_DIR$/src/main/java/InputHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/DBConnectionTest.java" afterPath="$PROJECT_DIR$/src/test/java/DBConnectionTest.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,44 +49,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="360">
+              <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InputHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/InputHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="10" column="18" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1508172394056" expanded="true" signature="735:771" ph="INSERT INTO Subject... " />
-                <marker date="1508172394056" expanded="true" signature="1833:1869" ph="INSERT INTO Teacher... " />
-                <marker date="1508172394056" expanded="true" signature="2844:2880" ph="SELECT * FRO... Subject" />
-                <marker date="1508172394056" expanded="true" signature="3547:3568" ph="SELECT * FRO... Subject" />
-                <marker date="1508172394056" expanded="true" signature="4102:4123" ph="SELECT * FRO... Teacher" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBConnection.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/DBConnection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="34" column="50" lean-forward="false" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1508170539683" expanded="true" signature="1712:1734" ph="DROP SCHEMA " />
-                <marker date="1508170539683" expanded="true" signature="1770:1784" ph="CREATE SCHEM... missingValue" />
               </folding>
             </state>
           </provider>
@@ -81,6 +69,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -109,16 +100,19 @@
         <option value="$PROJECT_DIR$/rooms.csv" />
         <option value="$PROJECT_DIR$/src/main/java/Subjects.java" />
         <option value="$PROJECT_DIR$/dbConnectionCredentials.csv" />
-        <option value="$PROJECT_DIR$/src/test/java/DBConnectionTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/DBHandlerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/InputHandlerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DBHandler.java" />
         <option value="$PROJECT_DIR$/README.rtf" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/DBConnection.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/test/java/DBConnectionTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DBConnection.java" />
         <option value="$PROJECT_DIR$/src/main/java/InputHandler.java" />
+        <option value="$PROJECT_DIR$/files/createSubjectTableSql.txt" />
+        <option value="$PROJECT_DIR$/files/createTeacherTableSql.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/DBHandler.java" />
+        <option value="$PROJECT_DIR$/files/createSubjectTeacherTableSql.txt" />
       </list>
     </option>
   </component>
@@ -135,8 +129,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="840" />
+  <component name="ProjectFrameBounds">
     <option name="width" value="840" />
     <option name="height" value="1005" />
   </component>
@@ -196,6 +189,7 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -225,26 +219,6 @@
               <item name="Innlevering_1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="WesterdalsTimetable" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Innlevering_1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WesterdalsTimetable" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Innlevering_1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WesterdalsTimetable" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Innlevering_1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -265,6 +239,11 @@
     <property name="SearchEverywhereHistoryKey" value="getDb&#9;PSI&#9;JAVA://DBHandler#getDbCon&#10;timetablewesterdals&#9;null&#9;null" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js.eslint.eslintPackage" value="" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/files" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -813,7 +792,7 @@
       <workItem from="1508189015656" duration="188000" />
       <workItem from="1508229115939" duration="397000" />
       <workItem from="1508237359525" duration="3508000" />
-      <workItem from="1508671424030" duration="19000" />
+      <workItem from="1508671424030" duration="1973000" />
     </task>
     <servers />
   </component>
@@ -850,7 +829,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88395000" />
+    <option name="totallyTimeSpent" value="90349000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -862,23 +841,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1005" extended-state="6" />
+    <frame x="0" y="0" width="840" height="1005" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.497558" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32807216" sideWeight="0.44688645" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.22466423" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30777904" sideWeight="0.53846157" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24464487" sideWeight="0.22832723" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30777904" sideWeight="0.53258145" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30777904" sideWeight="0.46741855" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14102565" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28947368" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21948819" sideWeight="0.8722689" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -891,11 +872,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32807216" sideWeight="0.44932845" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1959707" sideWeight="0.1277311" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -953,9 +932,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Room.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Subject.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Teacher.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/InputHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1038,7 +1014,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/teachers.csv">
+    <entry file="file://$PROJECT_DIR$/files/teachers.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="31" lean-forward="false" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
@@ -1063,7 +1039,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GUI.java" />
-    <entry file="file://$PROJECT_DIR$/rooms.csv">
+    <entry file="file://$PROJECT_DIR$/files/rooms.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
@@ -1071,7 +1047,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Subjects.java" />
-    <entry file="file://$PROJECT_DIR$/subjects.csv">
+    <entry file="file://$PROJECT_DIR$/files/subjects.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
@@ -1088,13 +1064,6 @@
     </entry>
     <entry file="das://table:/5657481a/f3374925-41d8-444f-b4a8-9ae4b602ee09/TimetableWesterdals.Teacher" />
     <entry file="das://table:/5657481a/f3374925-41d8-444f-b4a8-9ae4b602ee09/TimetableWesterdals.Subject_Teacher" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/DBConnectionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="24" column="7" lean-forward="false" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.rtf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1108,13 +1077,6 @@
         <state relative-caret-position="132">
           <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1144,54 +1106,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/DBConnectionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="375">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/InputHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="18" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
+        <state relative-caret-position="45">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/createSubjectTableSql.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/createTeacherTableSql.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/createSubjectTeacherTableSql.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1508172394056" expanded="true" signature="735:771" ph="INSERT INTO Subject... " />
-            <marker date="1508172394056" expanded="true" signature="1833:1869" ph="INSERT INTO Teacher... " />
-            <marker date="1508172394056" expanded="true" signature="2844:2880" ph="SELECT * FRO... Subject" />
-            <marker date="1508172394056" expanded="true" signature="3547:3568" ph="SELECT * FRO... Subject" />
-            <marker date="1508172394056" expanded="true" signature="4102:4123" ph="SELECT * FRO... Teacher" />
+            <marker date="1508673392928" expanded="true" signature="0:464" ph="CREATE TABLE... Subject_Teacher" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DBHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="34" lean-forward="false" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+        <state relative-caret-position="226">
+          <caret line="42" column="82" lean-forward="false" selection-start-line="42" selection-start-column="82" selection-end-line="42" selection-end-column="82" />
           <folding>
-            <marker date="1506849695340" expanded="true" signature="312:348" ph="DROP TABLE I... " />
-            <marker date="1506849695340" expanded="true" signature="377:405" ph="DROP TABLE I... " />
-            <marker date="1506849695340" expanded="true" signature="434:462" ph="DROP TABLE I... " />
-            <marker date="1506849695340" expanded="true" signature="719:964" ph="CREATE TABLE... Subject" />
-            <marker date="1506849695340" expanded="true" signature="1044:1295" ph="CREATE TABLE... Teacher" />
-            <marker date="1506849695340" expanded="true" signature="1375:1990" ph="CREATE TABLE... Subject_Teacher" />
+            <element signature="imports" expanded="true" />
+            <marker date="1508673464396" expanded="true" signature="424:460" ph="DROP TABLE I... " />
+            <marker date="1508673464396" expanded="true" signature="489:517" ph="DROP TABLE I... " />
+            <marker date="1508673464396" expanded="true" signature="546:574" ph="DROP TABLE I... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DBConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="34" column="50" lean-forward="false" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+        <state relative-caret-position="330">
+          <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1508170539683" expanded="true" signature="1712:1734" ph="DROP SCHEMA " />
-            <marker date="1508170539683" expanded="true" signature="1770:1784" ph="CREATE SCHEM... missingValue" />
+            <marker date="1508672258967" expanded="true" signature="1536:1558" ph="DROP SCHEMA " />
+            <marker date="1508672258967" expanded="true" signature="1594:1608" ph="CREATE SCHEM... missingValue" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/InputHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-416">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1508672400513" expanded="true" signature="741:777" ph="INSERT INTO Subject... " />
+            <marker date="1508672400513" expanded="true" signature="1845:1881" ph="INSERT INTO Teacher... " />
+            <marker date="1508672400513" expanded="true" signature="2856:2892" ph="SELECT * FRO... Subject" />
+            <marker date="1508672400513" expanded="true" signature="3559:3580" ph="SELECT * FRO... Subject" />
+            <marker date="1508672400513" expanded="true" signature="4114:4135" ph="SELECT * FRO... Teacher" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,8 +1,12 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.*;
 
 public class DBHandler {
 
 	private DBConnection dbCon;
+	private String sqlQuery;
 
 
 	public DBHandler() {
@@ -30,43 +34,38 @@ public class DBHandler {
 		try (Connection con = dbCon.ds.getConnection();
 		     Statement stmt = con.createStatement()) {
 
-			stmt.executeUpdate("CREATE TABLE Subject(" +
-							"code VARCHAR(10) NOT NULL," +
-							"name VARCHAR(100) NOT NULL," +
-							"duration double NOT NULL," +
-							"numStudents int NOT NULL," +
-							"PRIMARY KEY (code)," +
-							"UNIQUE code_UNIQUE (code ASC));");
+			stmt.executeUpdate(readSqlFile("files/createSubjectTableSql.sql"));
 			System.out.println("Subject table created...");
 
-			stmt.executeUpdate("CREATE TABLE Teacher(" +
-							"id INT NOT NULL AUTO_INCREMENT," +
-							"name VARCHAR(100) NOT NULL," +
-							"notAvailable VARCHAR(10)," +
-							"contact VARCHAR(100) NOT NULL," +
-							"PRIMARY KEY (id)," +
-							"UNIQUE code_UNIQUE (id ASC));");
+			stmt.executeUpdate(readSqlFile("files/createTeacherTableSql.sql"));
 			System.out.println("Teacher table created...");
 
-			stmt.executeUpdate("CREATE TABLE Subject_Teacher(" +
-							"Subject_code VARCHAR(10) NOT NULL," +
-							"Teacher_id INT NOT NULL," +
-							"week INT NOT NULL," +
-							"classroom VARCHAR(45) NOT NULL," +
-							"PRIMARY KEY (Subject_code, Teacher_id)," +
-							"INDEX Teacher_id_idx (Teacher_id ASC)," +
-							"CONSTRAINT Subject_code" +
-							"\tFOREIGN KEY (Subject_code) REFERENCES Subject(code)" +
-							"    ON DELETE CASCADE" +
-							"    ON UPDATE CASCADE," +
-							"CONSTRAINT Teacher_id" +
-							"    FOREIGN KEY (Teacher_id) REFERENCES Teacher(id)" +
-							"    ON DELETE CASCADE" +
-							"    ON UPDATE CASCADE);");
+			stmt.executeUpdate(readSqlFile("files/createSubjectTeacherTableSql.sql"));
 			System.out.println("Subject_Teacher table created...");
 		} catch (SQLException sqle){
 			System.out.println("SQL ERROR! " + sqle.getMessage());
 		}
+	}
+
+	private String readSqlFile(String filepath){
+
+		try {
+			BufferedReader sqlFileReader = new BufferedReader(new FileReader(filepath));
+
+			StringBuilder stringBuilder = new StringBuilder();
+			String line = sqlFileReader.readLine();
+
+			while (line != null) {
+				stringBuilder.append(line);
+				line = sqlFileReader.readLine();
+			}
+
+			sqlQuery = stringBuilder.toString();
+
+		} catch (IOException ioex){
+			ioex.getMessage();
+		}
+		return sqlQuery;
 	}
 
 	/**

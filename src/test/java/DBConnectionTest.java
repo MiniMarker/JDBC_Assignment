@@ -27,8 +27,5 @@ public class DBConnectionTest {
 	/**
 	 * Here I test that the while loop only run once and only create one database.
 	 */
-	@Test
-	public void dbConnectionCredentialsLinesRead(){
-		assertTrue(dbConnection.linesRead == 1);
-	}
+
 }

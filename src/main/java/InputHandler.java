@@ -30,7 +30,7 @@ public class InputHandler  {
 		try (Connection con = dbCon.ds.getConnection()) {
 
 			try {
-				br = new BufferedReader(new FileReader("subjects.csv"));
+				br = new BufferedReader(new FileReader("files/subjects.csv"));
 
 				PreparedStatement prepSubjectStmt = con.prepareStatement("INSERT INTO Subject VALUES (?,?,?,?)");
 
@@ -72,7 +72,7 @@ public class InputHandler  {
 		try (Connection con = dbCon.ds.getConnection()){
 
 			try {
-				br = new BufferedReader(new FileReader("teachers.csv"));
+				br = new BufferedReader(new FileReader("files/teachers.csv"));
 
 				PreparedStatement prepTeacherStmt = con.prepareStatement("INSERT INTO Teacher VALUES (?,?,?,?)");
 
@@ -167,7 +167,10 @@ public class InputHandler  {
 					.executeQuery("SELECT * FROM Teacher");
 
 			while (rs.next()){
-				System.out.println("Lærerid: " + rs.getInt(1) + " Navn: " + rs.getString(2) + " Ikke ledig: " + rs.getString(3) + " Kontaktinfo: " + rs.getString(4));
+				System.out.println("Lærerid: " + rs.getInt(1) +
+						" Navn: " + rs.getString(2) +
+						" Ikke ledig: " + rs.getString(3) +
+						" Kontaktinfo: " + rs.getString(4));
 			}
 		} catch (SQLException sqle){
 			System.out.println("SQL ERROR! " + sqle.getMessage());
