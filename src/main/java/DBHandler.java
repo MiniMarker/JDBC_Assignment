@@ -18,11 +18,11 @@ public class DBHandler {
 		try (Connection con = dbCon.ds.getConnection();
 		     Statement stmt = con.createStatement()) {
 
-			stmt.executeUpdate("DROP TABLE IF EXISTS Subject_Teacher;");
+			stmt.addBatch("DROP TABLE IF EXISTS Subject_Teacher;");
+			stmt.addBatch("DROP TABLE IF EXISTS Subject;");
+			stmt.addBatch("DROP TABLE IF EXISTS Teacher;");
 
-			stmt.executeUpdate("DROP TABLE IF EXISTS Subject;");
-
-			stmt.executeUpdate("DROP TABLE IF EXISTS Teacher;");
+			stmt.executeBatch();
 
 		} catch (SQLException sqle){
 			System.out.println("SQL ERROR! " + sqle.getMessage());
@@ -34,10 +34,10 @@ public class DBHandler {
 		try (Connection con = dbCon.ds.getConnection();
 		     Statement stmt = con.createStatement()) {
 
-			stmt.executeUpdate(readSqlFile("files/createSubjectTableSql.sql"));
+			stmt.executeUpdate(readSqlFile("target/textfiles/createSubjectTableSql.sql"));
 			System.out.println("Subject table created...");
 
-			stmt.executeUpdate(readSqlFile("files/createTeacherTableSql.sql"));
+			stmt.executeUpdate(readSqlFile("target/textfiles/createTeacherTableSql.sql"));
 			System.out.println("Teacher table created...");
 
 			stmt.executeUpdate(readSqlFile("files/createSubjectTeacherTableSql.sql"));

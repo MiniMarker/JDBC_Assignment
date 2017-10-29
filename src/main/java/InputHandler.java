@@ -10,6 +10,9 @@ public class InputHandler  {
 	private DBConnection dbCon;
 	private DBHandler dbHan;
 	private BufferedReader br;
+	private String text;
+	private StringBuilder stringBuilder;
+	private String result;
 
 	private String line;
 	private String splitBy = ",";
@@ -23,16 +26,14 @@ public class InputHandler  {
 
 	/**
 	 * Add data to Subject table form file
+	 * @return returns numbers of rows created
 	 */
-
-	public void addSubjectDataFromFile() {
+	public String addSubjectDataFromFile() {
 
 		try (Connection con = dbCon.ds.getConnection()) {
 
-			try {
-				br = new BufferedReader(new FileReader("files/subjects.csv"));
-
-				PreparedStatement prepSubjectStmt = con.prepareStatement("INSERT INTO Subject VALUES (?,?,?,?)");
+			try (BufferedReader br = new BufferedReader(new FileReader("target/textfiles/subjects.csv"));
+			     PreparedStatement prepSubjectStmt = con.prepareStatement("INSERT INTO Subject VALUES (?,?,?,?)")) {
 
 				int count = 0;
 
@@ -47,20 +48,20 @@ public class InputHandler  {
 					prepSubjectStmt.setInt(4, Integer.parseInt(subjects[3]));
 
 					prepSubjectStmt.executeUpdate();
-
 					count++;
 				}
 
-				System.out.println(count + " Rows created in table 'Subject'");
+				text = (count + " Rows created in table 'Subject'");
 
-			} catch (SQLException sqle){
+			} catch (SQLException sqle) {
 				System.out.println("SQL ERROR! " + sqle.getMessage());
-			} catch (IOException ioex){
+			} catch (IOException ioex) {
 				System.out.println("IO ERROR! " + ioex.getMessage());
 			}
-		} catch (SQLException sqle2){
+		} catch (SQLException sqle2) {
 			System.out.println("SQL ERROR! " + sqle2.getMessage());
 		}
+		return text;
 	}
 
 	/**
@@ -71,10 +72,8 @@ public class InputHandler  {
 
 		try (Connection con = dbCon.ds.getConnection()){
 
-			try {
-				br = new BufferedReader(new FileReader("files/teachers.csv"));
-
-				PreparedStatement prepTeacherStmt = con.prepareStatement("INSERT INTO Teacher VALUES (?,?,?,?)");
+			try (BufferedReader br = new BufferedReader(new FileReader("target/textfiles/teachers.csv"));
+			     PreparedStatement prepTeacherStmt = con.prepareStatement("INSERT INTO Teacher VALUES (?,?,?,?)")) {
 
 				int count = 0;
 
@@ -89,7 +88,6 @@ public class InputHandler  {
 					prepTeacherStmt.setString(4, teachers[3]);
 
 					prepTeacherStmt.executeUpdate();
-
 					count++;
 				}
 
@@ -107,58 +105,62 @@ public class InputHandler  {
 
 	/**
 	 * Print one subject defined by subject.code
+	 * @return one ResultSet defined by a query based on subject.code
 	 */
-	public void printSingeSubject() {
-		try (Connection con = dbCon.ds.getConnection()) {
-
-			PreparedStatement prepSingeSubjectStmt = con.prepareStatement("SELECT * FROM Subject WHERE code = ?");
-
-			System.out.print("Enter subject code: ");
-			String code = scanner.nextLine();
+	public String printSingleSubject(String code) {
+		try (Connection con = dbCon.ds.getConnection();
+		     PreparedStatement prepSingeSubjectStmt = con.prepareStatement("SELECT * FROM Subject WHERE code = ?" + "\n")) {
 
 			prepSingeSubjectStmt.setString(1, code);
 
 			ResultSet rs = prepSingeSubjectStmt.executeQuery();
 
 			while (rs.next()) {
-				System.out.println(rs.getString(1) + " "
+				text = (rs.getString(1) + " "
 						+ rs.getString(2) + " "
 						+ rs.getDouble(3) + " "
 						+ rs.getInt(4));
 			}
+
 		} catch (SQLException sqle) {
 			System.out.println("SQL ERROR! " + sqle.getMessage());
 		}
+		return text;
 	}
 
 	/**
 	 * Print all subjects in database
+	 * @return Strings of all rows in the db-table built by using a StringBuilder
 	 */
-
-	public void printAllSubjects() {
+	public String printAllSubjects() {
 
 		try (Connection con = dbCon.ds.getConnection();
 		     Statement stmt = con.createStatement()) {
 
-			ResultSet rs = stmt
-					.executeQuery("SELECT * FROM Subject");
+			ResultSet rs = stmt.executeQuery("SELECT * FROM Subject");
 
-			while (rs.next()){
-				System.out.println("Emnekode: " + rs.getString(1) +
-						" Enmenavn: " + rs.getString(2) +
-						" Varighet: " + rs.getDouble(3) +
-						" Antall påmeldte: " + rs.getInt(4));
+			stringBuilder = new StringBuilder();
+
+			while (rs.next()) {
+				stringBuilder.append(
+						"Emnekode: " + rs.getString(1) +
+								" Enmenavn: " + rs.getString(2) +
+								" Varighet: " + rs.getDouble(3) +
+								" Antall påmeldte: " + rs.getInt(4) + "\n");
 			}
+
+			result = stringBuilder.toString();
+
 		} catch (SQLException sqle) {
 			System.out.println("SQL ERROR! " + sqle.getMessage());
 		}
+		return result;
 	}
 
 	/**
 	 * Print all teachers in database
 	 */
-
-	public void printAllTeachers() {
+	public String printAllTeachers() {
 
 		try (Connection con = dbCon.ds.getConnection();
 		     Statement stmt = con.createStatement()) {
@@ -166,15 +168,21 @@ public class InputHandler  {
 			ResultSet rs = stmt
 					.executeQuery("SELECT * FROM Teacher");
 
+			stringBuilder = new StringBuilder();
+
 			while (rs.next()){
-				System.out.println("Lærerid: " + rs.getInt(1) +
+				stringBuilder.append("Lærerid: " + rs.getInt(1) +
 						" Navn: " + rs.getString(2) +
 						" Ikke ledig: " + rs.getString(3) +
 						" Kontaktinfo: " + rs.getString(4));
 			}
+
+			result = stringBuilder.toString();
+
 		} catch (SQLException sqle){
 			System.out.println("SQL ERROR! " + sqle.getMessage());
 		}
+		return result;
 	}
 
 	/**
@@ -182,29 +190,8 @@ public class InputHandler  {
 	 */
 
 	public void printAllData(){
-		printAllSubjects();
+		System.out.println(printAllSubjects());
 		System.out.println("");
-		printAllTeachers();
-	}
-
-	/*
-	public void pupulateSubjectTeacherTable() throws SQLException{
-		try (Connection con = dbCon.ds.getConnection();
-			Statement stmt = con.createStatement()) {
-
-			PreparedStatement prepSubjectTeacherStmt = con.prepareStatement("INSERT INTO Subject_Teacher VALUES (?,?,?,?)");
-
-
-			prepSubjectTeacherStmt.executeQuery();
-		}
-	}
-	*/
-
-	/**
-	 * Test methods
-	 */
-
-	public DBConnection getDbCon() {
-		return dbCon;
+		System.out.println(printAllTeachers());
 	}
 }

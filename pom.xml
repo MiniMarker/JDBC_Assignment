@@ -17,6 +17,93 @@
                     <target>1.7</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>ru.yaal.maven</groupId>
+                <artifactId>write-text-files-maven-plugin</artifactId>
+                <version>1.1</version>
+                <configuration>
+                    <charset>UTF-8</charset>
+                    <files>
+
+                        <!-- DATAFILES -->
+                        <file>
+                            <path>target/textfiles/subjects.csv</path>
+                            <lines>
+                                <line>PGR200,Avansert Javaprogrammering,4.5,31</line>
+                                <line>PG4200,Algoritmer og Datastrukturer,3.5,25</line>
+                                <line>PG3300,Software Design,2,48</line>
+                                <line>PJ3100,Project Software Engineering,3,105</line>
+                                <line>DB1100,Databaser,2,203</line>
+                                <line>TK1100,Digital Teknologi,1.5,168</line>
+                                <line>TK2100,Informasjonssikkerhet,2,150</line>
+                                <line>PGR100,Objektorientert Programmering 1,4,200</line>
+                                <line>PGR101,Objektorientert Programmering 2,3,100</line>
+                                <line>PRO101,Webprosjekt,2.5,170</line>
+                            </lines>
+                        </file>
+                        <file>
+                            <path>target/textfiles/rooms.csv</path>
+                            <lines>
+                                <line>F101,Fjæringen,Auditorium,200</line>
+                                <line>F201,Fjæringen,Klasserom,50</line>
+                                <line>F202,Fjæringen,Klasserom,30</line>
+                                <line>F301,Fjæringen,Harvard-Auditorium,40</line>
+                                <line>F302,Fjæringen,Harvard-Auditorium,20</line>
+                                <line>V102,Vulkan,Auditorium,80</line>
+                                <line>V202,Vulkan,Klasserom,80</line>
+                                <line>V203,Vulkan,Harvard-Auditorium,45</line>
+                            </lines>
+                        </file>
+                        <file>
+                            <path>target/textfiles/teachers.csv</path>
+                            <lines>
+                                <line>1,Christian Marker,mon,46836822</line>
+                                <line>2,Per Lauvås,wed,36245132</line>
+                                <line>3,Andrea Arcuri,none,37142900</line>
+                                <line>4,Eivind Brevik,thu,26452433</line>
+                                <line>5,Rolando Gonzalez,wed,24312311</line>
+                            </lines>
+                        </file>
+
+                        <!-- SQL-FILES -->
+                        <file>
+                            <path>target/textfiles/createSubjectTableSql.sql</path>
+                            <lines>
+                                <line>CREATE TABLE Subject(</line>
+                                <line>code VARCHAR(10) NOT NULL,</line>
+                                <line>name VARCHAR(100) NOT NULL,</line>
+                                <line>duration double NOT NULL,</line>
+                                <line>numStudents int NOT NULL,</line>
+                                <line>PRIMARY KEY (code),</line>
+                                <line>UNIQUE code_UNIQUE (code ASC));</line>
+                            </lines>
+                        </file>
+                        <file>
+                            <path>target/textfiles/createTeacherTableSql.sql</path>
+                            <lines>
+                                <line>CREATE TABLE Teacher(</line>
+                                <line>id INT NOT NULL AUTO_INCREMENT,</line>
+                                <line>name VARCHAR(100) NOT NULL,</line>
+                                <line>notAvailable VARCHAR(10),</line>
+                                <line>contact VARCHAR(100) NOT NULL,</line>
+                                <line>PRIMARY KEY (id),</line>
+                                <line>UNIQUE code_UNIQUE (id ASC));</line>
+                            </lines>
+                        </file>
+                    </files>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>write-text-files</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>write-text-files</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 

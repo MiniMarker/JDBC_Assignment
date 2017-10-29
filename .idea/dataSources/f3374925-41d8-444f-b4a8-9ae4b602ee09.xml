@@ -14,72 +14,77 @@
     <schema id="9" parent="1" name="TimetableWesterdals">
       <Visible>1</Visible>
     </schema>
-    <table id="10" parent="9" name="Subject"/>
-    <table id="11" parent="9" name="Subject_Teacher"/>
-    <table id="12" parent="9" name="Teacher"/>
-    <column id="13" parent="10" name="code">
+    <schema id="10" parent="1" name="hskole">
+      <Current>1</Current>
+    </schema>
+    <schema id="11" parent="1" name="movie"/>
+    <schema id="12" parent="1" name="pgr200_assignment_1"/>
+    <table id="13" parent="9" name="Subject"/>
+    <table id="14" parent="9" name="Subject_Teacher"/>
+    <table id="15" parent="9" name="Teacher"/>
+    <column id="16" parent="13" name="code">
       <Position>1</Position>
       <DataType>varchar(10)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="14" parent="10" name="name">
+    <column id="17" parent="13" name="name">
       <Position>2</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="15" parent="10" name="duration">
+    <column id="18" parent="13" name="duration">
       <Position>3</Position>
       <DataType>double|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="16" parent="10" name="numStudents">
+    <column id="19" parent="13" name="numStudents">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="17" parent="10" name="code_UNIQUE">
+    <index id="20" parent="13" name="code_UNIQUE">
       <ColNames>code</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="18" parent="10" name="PRIMARY">
+    <key id="21" parent="13" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>code</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="19" parent="10" name="code_UNIQUE">
+    <key id="22" parent="13" name="code_UNIQUE">
       <ColNames>code</ColNames>
       <UnderlyingIndexName>code_UNIQUE</UnderlyingIndexName>
     </key>
-    <column id="20" parent="11" name="Subject_code">
+    <column id="23" parent="14" name="Subject_code">
       <Position>1</Position>
       <DataType>varchar(10)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="21" parent="11" name="Teacher_id">
+    <column id="24" parent="14" name="Teacher_id">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="22" parent="11" name="week">
+    <column id="25" parent="14" name="week">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="23" parent="11" name="classroom">
+    <column id="26" parent="14" name="classroom">
       <Position>4</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="24" parent="11" name="Teacher_id_idx">
+    <index id="27" parent="14" name="Teacher_id_idx">
       <ColNames>Teacher_id</ColNames>
     </index>
-    <key id="25" parent="11" name="PRIMARY">
+    <key id="28" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Subject_code
 Teacher_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="26" parent="11" name="Subject_code">
+    <foreign-key id="29" parent="14" name="Subject_code">
       <ColNames>Subject_code</ColNames>
       <RefSchemaName>timetablewesterdals</RefSchemaName>
       <RefTableName>Subject</RefTableName>
@@ -87,7 +92,7 @@ Teacher_id</ColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="27" parent="11" name="Teacher_id">
+    <foreign-key id="30" parent="14" name="Teacher_id">
       <ColNames>Teacher_id</ColNames>
       <RefSchemaName>timetablewesterdals</RefSchemaName>
       <RefTableName>Teacher</RefTableName>
@@ -95,36 +100,36 @@ Teacher_id</ColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="28" parent="12" name="id">
+    <column id="31" parent="15" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="29" parent="12" name="name">
+    <column id="32" parent="15" name="name">
       <Position>2</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="30" parent="12" name="notAvailable">
+    <column id="33" parent="15" name="notAvailable">
       <Position>3</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <column id="31" parent="12" name="contact">
+    <column id="34" parent="15" name="contact">
       <Position>4</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="32" parent="12" name="code_UNIQUE">
+    <index id="35" parent="15" name="code_UNIQUE">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="33" parent="12" name="PRIMARY">
+    <key id="36" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="34" parent="12" name="code_UNIQUE">
+    <key id="37" parent="15" name="code_UNIQUE">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>code_UNIQUE</UnderlyingIndexName>
     </key>

@@ -5,6 +5,9 @@ public class Main {
 
 	public static void main(String[] args) throws SQLException, ClassNotFoundException, IOException {
 
+		UserMenu userMenu = new UserMenu();
+
+		/*
 		// necessary method calls! Do noe remove!
 		DBConnection dbConnection = new DBConnection();
 		dbConnection.setupCheck();
@@ -30,7 +33,7 @@ public class Main {
 		System.out.println("----------- PRINTING ONE SUBJECT ------------");
 		inputHandler.printSingeSubject();
 
-		/*
+
 		System.out.println("");
 		System.out.println("------------- PRINTING ALL DATA -------------");
 		inputHandler.printAllData();

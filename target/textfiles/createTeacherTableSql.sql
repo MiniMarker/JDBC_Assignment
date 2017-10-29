@@ -4,5 +4,4 @@ name VARCHAR(100) NOT NULL,
 notAvailable VARCHAR(10),
 contact VARCHAR(100) NOT NULL,
 PRIMARY KEY (id),
-UNIQUE code_UNIQUE (id ASC)
-);
+UNIQUE code_UNIQUE (id ASC));
