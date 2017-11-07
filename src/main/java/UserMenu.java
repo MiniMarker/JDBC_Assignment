@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
 public class UserMenu {
-	private DBHandler dbHandler;
 	private Scanner clientInput = new Scanner(System.in);
 	private String choice;
 	private boolean flag = true;
 
 	private InputHandler inputHandler;
+	private DBConnection dbCon = new DBConnection();
 
 	public UserMenu() {
 
@@ -21,20 +21,33 @@ public class UserMenu {
 	 */
 	private void startMenu() {
 
-		System.out.println("Velkommen til serveren! \n" +
-				"Skriv inn ønsket valg og avslutt med enter\n\n" +
-				"1: Koble til og opprett databasen\n" +
-				"0: Avslutt");
+		System.out.println(
+						"** Skriv inn ønsket valg og avslutt med enter **\n\n" +
+						"------------------------------------------------------------------------------------------------- \n" +
+						"1: Koble til og opprett databasene\n" +
+						"0: Avslutt\n" +
+						"-------------------------------------------------------------------------------------------------");
 
 		choice = clientInput.nextLine();
 
 		switch (choice) {
 			case "1":
-				DBConnection dbConnection = new DBConnection();
-				dbConnection.setupCheck();
+				DBHandler dbHandler = new DBHandler();
+
+				System.out.print("\nKobler til og kjører en setUpCheck...");
+				dbCon.setupCheck();
+				System.out.println("Vellykket");
+
+				System.out.print("Dropper tabellen hvis den eksisterer...");
+				dbHandler.dropTablesIfExists(dbCon.connect());
+				System.out.println("Vellykket");
+
+				System.out.println("Oppretter tabeller...");
+				dbHandler.createTables(dbCon.connect());
+				System.out.println("Vellykket \n");
 
 				//neste meny
-				serverInitMenu();
+				insertDataToTables();
 				break;
 
 			case "0":
@@ -53,74 +66,31 @@ public class UserMenu {
 
 	}
 
-	/**
-	 * database table creation/deletion
-	 */
-	private void serverInitMenu() {
-		System.out.println("1: Drop tabellen 'subject' hvis den eksisterer \n" +
-				"2: Opprett tabeller \n" +
-				"9: Tilbake \n" +
-				"0: Avslutt");
-
-		choice = clientInput.nextLine();
-
-		switch (choice) {
-			case "1":
-				dbHandler = new DBHandler();
-				dbHandler.dropTablesIfExists();
-				System.out.print("Dropper tabellen hvis den eksisterer...");
-				System.out.println("Vellykket \n");
-
-				//rekursivt kall til menyen fordi
-				serverInitMenu();
-				break;
-
-			case "2":
-
-				System.out.println("Oppretter tabeller...");
-				dbHandler.createTables();
-				System.out.println("Vellykket! \n");
-
-				//neste meny
-				insertDataToTables();
-				break;
-
-			case "9":
-				System.out.println("Går tilbake... \n");
-				startMenu();
-				break;
-
-			case "0":
-				System.out.println("Avslutter...");
-				flag = false;
-				System.out.println("Vellykket");
-				break;
-
-			default:
-				System.out.println("Feil svar! Prøv igjen... \n");
-
-				//rekursivt kall hvis ikke klienten svarer som forventet
-				serverInitMenu();
-				break;
-		}
-	}
 
 	/**
 	 * populate the tables
 	 */
 	private void insertDataToTables() {
-		System.out.println("1: Fyll inn tabellen med data fra fil \n" +
+		System.out.println(
+				"-------------------------------------------------------------------------------------------------\n" +
+				"1: Fyll inn tabellene med data fra filene \n" +
 				"9: Tilbake \n" +
-				"0: Avslutt");
+				"0: Avslutt\n" +
+				"-------------------------------------------------------------------------------------------------");
 
 		choice = clientInput.nextLine();
 
 		switch (choice) {
 			case "1":
-				System.out.println("Oppretter 'subject' table...'");
+				System.out.println("\nFyller tabellen 'subject' med data...'");
 				inputHandler = new InputHandler();
-				System.out.println(inputHandler.addSubjectDataFromFile());
+				inputHandler.addSubjectDataFromFile(dbCon.connect());
 				System.out.println("Vellykket");
+
+				System.out.println("Fyller tabellen 'teacher' med data...'");
+				inputHandler = new InputHandler();
+				inputHandler.addTeacherDataFromFile(dbCon.connect());
+				System.out.println("Vellykket\n");
 
 				//neste meny
 				printDataFromDatabaseMenu();
@@ -128,7 +98,7 @@ public class UserMenu {
 
 			case "9":
 				System.out.println("Går tilbake... \n");
-				serverInitMenu();
+				startMenu();
 				break;
 
 			case "0":
@@ -150,39 +120,52 @@ public class UserMenu {
 	 * print data from the table, either by entering a specific subject code or print all the rows in the table.
 	 */
 	private void printDataFromDatabaseMenu() {
-		System.out.println("1: Print data fra tabellen 'subject'\n" +
-				"2: Print ett subject fra emnekode\n" +
-				"1: Print data fra tabellen 'teacher'" +
-				"9: Tilbake\n" +
-				"0: Avslutt");
+		System.out.println(
+				"-------------------------------------------------------------------------------------------------\n" +
+						"1: Print all data fra tabellen 'subject'\n" +
+						"2: Print ett subject spesifisert ved emnekode\n" +
+						"3: Print all data fra tabellen 'teacher'\n" +
+						"4: Print all data i alle tabellene i databasen\n" +
+						"9: Tilbake\n" +
+						"0: Avslutt\n" +
+						"-------------------------------------------------------------------------------------------------");
 
 		choice = clientInput.nextLine();
 
 		switch (choice) {
 			case "1":
-				System.out.println("----------------- SUBJECTS ------------------");
+				System.out.println("\n------------------------------------------- SUBJECTS --------------------------------------------");
 				inputHandler = new InputHandler();
-				System.out.println(inputHandler.printAllSubjects());
+				System.out.println(inputHandler.printAllSubjects(dbCon.connect()));
 
 				//slutten av menyen, rekursivt kall
 				printDataFromDatabaseMenu();
 				break;
 
 			case "2":
-				System.out.println("Skriv inn emnekode:");
+				System.out.print("Skriv inn emnekode: ");
 				String emnekode = clientInput.nextLine();
-				System.out.println("----------- PRINTING ONE SUBJECT ------------");
+				System.out.println("\n--------------------------------------- PRINTING " + emnekode.toUpperCase() + " ---------------------------------------");
 				inputHandler = new InputHandler();
-				System.out.println(inputHandler.printSingleSubject(emnekode) + "\n");
+				System.out.println(inputHandler.printSingleSubject(dbCon.connect(), emnekode) + "\n");
 
 				//slutten av menyen, rekursivt kall
 				printDataFromDatabaseMenu();
 				break;
 
 			case "3":
-				System.out.println("----------------- TEACHERS ------------------");
+				System.out.println("\n------------------------------------------- TEACHERS --------------------------------------------");
 				inputHandler = new InputHandler();
-				System.out.println(inputHandler.printAllTeachers());
+				System.out.println(inputHandler.printAllTeachers(dbCon.connect()));
+
+				//slutten av menyen, rekursivt kall
+				printDataFromDatabaseMenu();
+				break;
+
+			case "4":
+				System.out.println("\n------------------------------------------- ALL DATA --------------------------------------------");
+				inputHandler = new InputHandler();
+				inputHandler.printAllData();
 
 				//slutten av menyen, rekursivt kall
 				printDataFromDatabaseMenu();

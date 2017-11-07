@@ -5,23 +5,21 @@ import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
 
-public class DBConnection {
+public class TestDBConnection {
 
-	MysqlDataSource ds;
+	MysqlDataSource testDs;
 	private String dbName;
 	private String host;
 	private String userName;
 	private String password;
 
-	//private ReadProperties readProperties = new ReadProperties();
-
-	public DBConnection() {
+	public TestDBConnection() {
 		readConfigFile();
 	}
 
 	public static void main(String[] args) {
-		DBConnection dbConnection = new DBConnection();
-		dbConnection.setupCheck();
+		TestDBConnection testDBConnection = new TestDBConnection();
+		testDBConnection.setupCheck();
 	}
 
 	/**
@@ -29,13 +27,13 @@ public class DBConnection {
 	 */
 	public Connection connect() {
 		try {
-			ds = new MysqlDataSource();
-			ds.setDatabaseName(dbName);
-			ds.setServerName(host);
-			ds.setUser(userName);
-			ds.setPassword(password);
+			testDs = new MysqlDataSource();
+			testDs.setDatabaseName(dbName);
+			testDs.setServerName(host);
+			testDs.setUser(userName);
+			testDs.setPassword(password);
 
-			return ds.getConnection();
+			return testDs.getConnection();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -50,20 +48,17 @@ public class DBConnection {
 		Properties props = new Properties();
 		InputStream input;
 
-		String filepath = "dbConfig.properties";
-
 		try {
 			String filePath = "dbConfig.properties";
-			input = DBConnection.class.getClassLoader().getResourceAsStream(filepath);
+			input = DBConnection.class.getClassLoader().getResourceAsStream(filePath);
 
 			if (input == null) {
-				System.out.println("Unable to read file at " + filepath);
+				System.out.println("Unable to read file at " + filePath);
 				return;
 			}
 
 			props.load(input);
-
-			dbName = (props.getProperty("dbName"));
+			dbName = (props.getProperty("testdbName"));
 			host = (props.getProperty("host"));
 			userName = (props.getProperty("username"));
 			password = (props.getProperty("password"));
@@ -77,22 +72,35 @@ public class DBConnection {
 	/**
 	 * does a setup check that connects to the mySQL server and creates the schema
 	 */
-	public void setupCheck() {
+	public boolean setupCheck() {
+		Connection con;
+		Statement stmt = null;
 
-		try (Connection con = DriverManager.getConnection("jdbc:mysql://" + host + "/?user=" + userName + "&password=" + password);
-		     Statement stmt = con.createStatement()) {
-
+		try {
 			Class.forName("com.mysql.jdbc.Driver");
 
-			stmt.addBatch("DROP SCHEMA IF EXISTS " + dbName);
-			stmt.addBatch("CREATE SCHEMA " + dbName);
-			stmt.executeBatch();
+			con = DriverManager.getConnection("jdbc:mysql://" + host + "/?user=" + userName + "&password=" + password);
+			stmt = con.createStatement();
+
+			stmt.executeUpdate("DROP SCHEMA IF EXISTS " + dbName);
+			stmt.executeUpdate("CREATE SCHEMA " + dbName);
+
+			return true;
 
 		} catch (SQLException sqle) {
 			System.out.println("SQL ERROR! " + sqle.getMessage());
 		} catch (ClassNotFoundException cnfe) {
 			System.out.println("ClassNotFoundError! " + cnfe.getMessage());
+		} finally {
+			try {
+				if (stmt != null) {
+					stmt.close();
+				}
+			} catch (SQLException sqle2) {
+				//empty on purpose
+			}
 		}
+		return false;
 	}
 }
 

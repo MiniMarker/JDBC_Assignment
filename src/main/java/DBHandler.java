@@ -6,32 +6,42 @@ import java.sql.*;
 public class DBHandler {
 
 	private DBConnection dbCon;
-	private String sqlQuery;
+	private String result;
 
 
 	public DBHandler() {
 		dbCon = new DBConnection();
 		dbCon.connect();
-		}
-
-	public void dropTablesIfExists() {
-		try (Connection con = dbCon.ds.getConnection();
-		     Statement stmt = con.createStatement()) {
-
-			stmt.addBatch("DROP TABLE IF EXISTS Subject_Teacher;");
-			stmt.addBatch("DROP TABLE IF EXISTS Subject;");
-			stmt.addBatch("DROP TABLE IF EXISTS Teacher;");
-
-			stmt.executeBatch();
-
-		} catch (SQLException sqle){
-			System.out.println("SQL ERROR! " + sqle.getMessage());
-		}
 	}
 
-	public void createTables() {
+	/**
+	 * Runs a query that drops the table if it exists.
+	 * @param connection a MySQLDataSource
+	 * @return a boolean to check if the deletion was successful.
+	 */
+	public boolean dropTablesIfExists(Connection connection) {
+		try (Connection con = connection;
+		     Statement stmt = con.createStatement()) {
 
-		try (Connection con = dbCon.ds.getConnection();
+			stmt.addBatch("DROP TABLE IF EXISTS Subject;");
+			stmt.addBatch("DROP TABLE IF EXISTS Teacher;");
+			stmt.executeBatch();
+
+			return true;
+
+		} catch (SQLException sqle) {
+			System.out.println("SQL ERROR! " + sqle.getMessage());
+		}
+		return false;
+	}
+
+	/**
+	 * this method uses readSqlFile(String filepath) to run a query that creates the tables.
+	 * @param connection a MySQLDataSource
+	 */
+	public void createTables(Connection connection) {
+
+		try (Connection con = connection;
 		     Statement stmt = con.createStatement()) {
 
 			stmt.executeUpdate(readSqlFile("target/textfiles/createSubjectTableSql.sql"));
@@ -40,39 +50,52 @@ public class DBHandler {
 			stmt.executeUpdate(readSqlFile("target/textfiles/createTeacherTableSql.sql"));
 			System.out.println("Teacher table created...");
 
-			stmt.executeUpdate(readSqlFile("files/createSubjectTeacherTableSql.sql"));
-			System.out.println("Subject_Teacher table created...");
-		} catch (SQLException sqle){
+		} catch (SQLException sqle) {
 			System.out.println("SQL ERROR! " + sqle.getMessage());
 		}
 	}
 
-	private String readSqlFile(String filepath){
+	/**
+	 * This method deletes the intire database... USE WITH CAUTION!!!!!!
+	 * @param connection a MySQLDataSource
+	 * @return a boolean to check if the deletion was successful
+	 */
+	public boolean destroyDatabase(Connection connection){
 
-		try {
-			BufferedReader sqlFileReader = new BufferedReader(new FileReader(filepath));
+		try (Connection con = connection;
+		     Statement stmt = con.createStatement()) {
+
+			stmt.executeQuery("DROP SCHEMA " + dbCon.ds.getDatabaseName());
+
+			return true;
+		} catch (SQLException sqle){
+			sqle.getMessage();
+		}
+		return false;
+	}
+
+	/**
+	 * This method reads text from a file and returns it as a string.
+	 * @param filepath the absolute file path to the .txt file.
+	 * @return a string of the file by using a StringBuilder, in this intance a SQL-string.
+	 */
+	public String readSqlFile(String filepath) {
+
+		try (BufferedReader sqlFileReader = new BufferedReader(new FileReader(filepath))) {
 
 			StringBuilder stringBuilder = new StringBuilder();
 			String line = sqlFileReader.readLine();
 
 			while (line != null) {
-				stringBuilder.append(line);
+				stringBuilder.append(line + " ");
 				line = sqlFileReader.readLine();
 			}
 
-			sqlQuery = stringBuilder.toString();
+			result = stringBuilder.toString();
 
-		} catch (IOException ioex){
+		} catch (IOException ioex) {
 			ioex.getMessage();
 		}
-		return sqlQuery;
-	}
-
-	/**
-	 * Test methods
-	 */
-
-	public DBConnection getDbCon() {
-		return dbCon;
+		return result;
 	}
 }

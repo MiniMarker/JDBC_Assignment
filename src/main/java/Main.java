@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Scanner;
 
 public class Main {
 
@@ -7,31 +8,38 @@ public class Main {
 
 		UserMenu userMenu = new UserMenu();
 
+
 		/*
 		// necessary method calls! Do noe remove!
-		DBConnection dbConnection = new DBConnection();
-		dbConnection.setupCheck();
+		DBConnection dbCon = new DBConnection();
+		dbCon.setupCheck();
 
 		DBHandler dbHandler = new DBHandler();
-		dbHandler.dropTablesIfExists();
-		dbHandler.createTables();
+		dbHandler.dropTablesIfExists(dbCon.connect());
+		dbHandler.createTables(dbCon.connect());
 
 		InputHandler inputHandler = new InputHandler();
-		inputHandler.addSubjectDataFromFile();
-		inputHandler.addTeacherDataFromFile();
+		inputHandler.addSubjectDataFromFile(dbCon.connect());
+		inputHandler.addTeacherDataFromFile(dbCon.connect());
 
 		//Printing methods
 		System.out.println("");
 		System.out.println("----------------- SUBJECTS ------------------");
-		inputHandler.printAllSubjects();
+		inputHandler.printAllSubjects(dbCon.connect());
 
-		System.out.println("");
-		System.out.println("----------------- TEACHERS ------------------");
-		inputHandler.printAllTeachers();
+		System.out.println("To print one subject you have to choose between");
 
 		System.out.println("");
 		System.out.println("----------- PRINTING ONE SUBJECT ------------");
-		inputHandler.printSingeSubject();
+		Scanner input = new Scanner(System.in);
+		String code = input.nextLine();
+		inputHandler.printSingleSubject(dbCon.connect(), code);
+
+		System.out.println("");
+		System.out.println("----------------- TEACHERS ------------------");
+		inputHandler.printAllTeachers(dbCon.connect());
+
+
 
 
 		System.out.println("");
