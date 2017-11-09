@@ -60,26 +60,26 @@ public class DBHandler {
 	 * @param connection a MySQLDataSource
 	 * @return a boolean to check if the deletion was successful
 	 */
-	public boolean destroyDatabase(Connection connection){
+	/*protected boolean destroyDatabase(Connection connection)    {
 
 		try (Connection con = connection;
 		     Statement stmt = con.createStatement()) {
 
-			stmt.executeQuery("DROP SCHEMA " + dbCon.ds.getDatabaseName());
+			stmt.executeQuery("DROP SCHEMA " + connection.getSchema());
 
 			return true;
 		} catch (SQLException sqle){
 			sqle.getMessage();
 		}
 		return false;
-	}
+	} */
 
 	/**
 	 * This method reads text from a file and returns it as a string.
 	 * @param filepath the absolute file path to the .txt file.
 	 * @return a string of the file by using a StringBuilder, in this intance a SQL-string.
 	 */
-	public String readSqlFile(String filepath) {
+	private String readSqlFile(String filepath) {
 
 		try (BufferedReader sqlFileReader = new BufferedReader(new FileReader(filepath))) {
 

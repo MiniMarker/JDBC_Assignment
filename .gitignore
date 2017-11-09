@@ -1,1 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
+.idea/dataSources/f3374925-41d8-444f-b4a8-9ae4b602ee09/_staging_/
+.idea/inspectionProfiles/
+target/generated-sources/
+target/generated-test-sources/

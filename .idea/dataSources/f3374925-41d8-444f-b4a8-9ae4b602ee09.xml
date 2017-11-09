@@ -25,7 +25,7 @@
     <schema id="14" parent="1" name="Schedule"/>
     <schema id="15" parent="1" name="skole"/>
     <schema id="16" parent="1" name="things"/>
-    <schema id="17" parent="1" name="TestTimeTableWesterdals"/>
+    <schema id="17" parent="1" name="TestTimetableWesterdals"/>
     <table id="18" parent="9" name="Subject"/>
     <table id="19" parent="9" name="Teacher"/>
     <column id="20" parent="18" name="code">

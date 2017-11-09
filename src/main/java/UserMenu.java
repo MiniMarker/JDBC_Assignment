@@ -15,6 +15,10 @@ public class UserMenu {
 		}
 	}
 
+	public static void main(String[] args) {
+		new UserMenu();
+	}
+
 	/**
 	 * Welcome text and initialization of the database.
 	 * All of the menus is written in norwegian

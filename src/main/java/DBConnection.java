@@ -13,15 +13,8 @@ public class DBConnection {
 	private String userName;
 	private String password;
 
-	//private ReadProperties readProperties = new ReadProperties();
-
 	public DBConnection() {
 		readConfigFile();
-	}
-
-	public static void main(String[] args) {
-		DBConnection dbConnection = new DBConnection();
-		dbConnection.setupCheck();
 	}
 
 	/**
@@ -46,15 +39,13 @@ public class DBConnection {
 	/**
 	 * reads the propertyfile and setting the fields to its data for further use.
 	 */
-	public void readConfigFile() {
+	private void readConfigFile() {
 		Properties props = new Properties();
-		InputStream input;
 
 		String filepath = "dbConfig.properties";
 
 		try {
-			String filePath = "dbConfig.properties";
-			input = DBConnection.class.getClassLoader().getResourceAsStream(filepath);
+			InputStream input = DBConnection.class.getClassLoader().getResourceAsStream(filepath);
 
 			if (input == null) {
 				System.out.println("Unable to read file at " + filepath);

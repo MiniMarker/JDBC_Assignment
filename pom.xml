@@ -43,19 +43,6 @@
                             </lines>
                         </file>
                         <file>
-                            <path>target/textfiles/rooms.csv</path>
-                            <lines>
-                                <line>F101,Fjæringen,Auditorium,200</line>
-                                <line>F201,Fjæringen,Klasserom,50</line>
-                                <line>F202,Fjæringen,Klasserom,30</line>
-                                <line>F301,Fjæringen,Harvard-Auditorium,40</line>
-                                <line>F302,Fjæringen,Harvard-Auditorium,20</line>
-                                <line>V102,Vulkan,Auditorium,80</line>
-                                <line>V202,Vulkan,Klasserom,80</line>
-                                <line>V203,Vulkan,Harvard-Auditorium,45</line>
-                            </lines>
-                        </file>
-                        <file>
                             <path>target/textfiles/teachers.csv</path>
                             <lines>
                                 <line>1,Christian Marker,mon,46836822</line>
@@ -91,6 +78,26 @@
                                 <line>UNIQUE code_UNIQUE (id ASC));</line>
                             </lines>
                         </file>
+
+                        <!-- TEST FILE -->
+                        <file>
+                            <path>target/textfiles/testFile.csv</path>
+                            <lines>
+                                <line>This </line>
+                                <line>is </line>
+                                <line>a </line>
+                                <line>test </line>
+                                <line>to </line>
+                                <line>see </line>
+                                <line>if </line>
+                                <line>this </line>
+                                <line>method </line>
+                                <line>reads </line>
+                                <line>the </line>
+                                <line>file </line>
+                                <line>correctly.</line>
+                            </lines>
+                        </file>
                     </files>
                 </configuration>
                 <executions>
@@ -113,6 +120,7 @@
             <artifactId>junit</artifactId>
             <version>RELEASE</version>
         </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>

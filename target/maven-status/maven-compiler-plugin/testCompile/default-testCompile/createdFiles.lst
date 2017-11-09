@@ -1,3 +1,2 @@
-DBHandlerTest.class
-InputHandlerTest.class
-DBConnectionTest.class
+DatabaseTests.class
+TestDBConnection.class

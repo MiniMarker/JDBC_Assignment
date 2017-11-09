@@ -27,20 +27,24 @@ public class DatabaseTests {
 	}
 
 	@AfterClass
-	public static void destroy(){
-		TestDBConnection testCon = new TestDBConnection();
-		DBHandler dbHandler = new DBHandler();
+	public static void tearDown() {
+		TestDBConnection testDBConnection = new TestDBConnection();
 
-		dbHandler.destroyDatabase(testCon.connect());
+		try (Connection con = testDBConnection.connect();
+		     Statement stmt = con.createStatement()) {
 
-		//assertTrue(dbHandler.destroyDatabase(testCon.connect()));
+			stmt.executeQuery("DROP SCHEMA TestTimetableWesterdals");
+
+		} catch (SQLException sqle){
+			sqle.getMessage();
+		}
 	}
 
 	@Test
 	public void subjectSetUpCheckTest() throws SQLException {
 		Statement stmt = testCon.connect().createStatement();
 
-		ResultSet subjectResultSet = stmt.executeQuery("SELECT * FROM TestTimetableWesterdals.Subject");
+		ResultSet subjectResultSet = stmt.executeQuery("SELECT * FROM Subject");
 		ResultSetMetaData subjectResultsetMetaData = subjectResultSet.getMetaData();
 
 		String[] subjectAttributteNames = {"code", "name", "duration", "numStudents"};
@@ -54,7 +58,7 @@ public class DatabaseTests {
 	public void teacherSetUpCheckTest() throws SQLException {
 		Statement stmt = testCon.connect().createStatement();
 
-		ResultSet teacherResultSet = stmt.executeQuery("SELECT * FROM TestTimetableWesterdals.Teacher");
+		ResultSet teacherResultSet = stmt.executeQuery("SELECT * FROM Teacher");
 		ResultSetMetaData teacherResultSetMetaData = teacherResultSet.getMetaData();
 
 		String[] teacherAttributteNames = {"id", "name", "notAvailable", "contact"};
@@ -90,7 +94,7 @@ public class DatabaseTests {
 		inputHandler.addSubjectDataFromFile(testCon.connect());
 
 		Statement stmt = testCon.connect().createStatement();
-		ResultSet rs = stmt.executeQuery("SELECT * FROM TestTimetableWesterdals.Subject");
+		ResultSet rs = stmt.executeQuery("SELECT * FROM Subject");
 
 		int rowCount = rs.last() ? rs.getRow() : 0;
 
@@ -103,20 +107,10 @@ public class DatabaseTests {
 		inputHandler.addTeacherDataFromFile(testCon.connect());
 
 		Statement stmt = testCon.connect().createStatement();
-		ResultSet rs = stmt.executeQuery("SELECT * FROM TestTimetableWesterdals.Teacher");
+		ResultSet rs = stmt.executeQuery("SELECT * FROM Teacher");
 
 		int rowCount = rs.last() ? rs.getRow() : 0;
 
 		assertEquals(5, rowCount);
-	}
-
-	@Test
-	public void readSqlFileTest(){
-		DBHandler dbHandler = new DBHandler();
-
-		String filepath = "target/textfiles/testFile.csv";
-		String result = dbHandler.readSqlFile(filepath);
-
-		assertEquals("This is a test to see if this method reads the file correctly. ", result);
 	}
 }
