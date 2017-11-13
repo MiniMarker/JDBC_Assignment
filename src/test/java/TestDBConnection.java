@@ -7,7 +7,6 @@ import java.util.Properties;
 
 public class TestDBConnection {
 
-	MysqlDataSource testDs;
 	private String dbName;
 	private String host;
 	private String userName;
@@ -27,7 +26,7 @@ public class TestDBConnection {
 	 */
 	public Connection connect() {
 		try {
-			testDs = new MysqlDataSource();
+			MysqlDataSource testDs = new MysqlDataSource();
 			testDs.setDatabaseName(dbName);
 			testDs.setServerName(host);
 			testDs.setUser(userName);

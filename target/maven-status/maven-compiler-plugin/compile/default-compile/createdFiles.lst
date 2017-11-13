@@ -1,6 +1,5 @@
-Main.class
 DBHandler.class
 Subjects.class
 InputHandler.class
-UserMenu.class
 DBConnection.class
+UserMenu.class

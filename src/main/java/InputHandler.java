@@ -5,8 +5,6 @@ import java.sql.*;
 
 public class InputHandler {
 
-	private DBConnection dbCon;
-	private DBHandler dbHan;
 	private String text;
 	private StringBuilder stringBuilder;
 	private String result;
@@ -15,10 +13,7 @@ public class InputHandler {
 	private String splitBy = ",";
 
 	public InputHandler() {
-		dbCon = new DBConnection();
-		dbHan = new DBHandler();
 
-		dbCon.connect();
 	}
 
 	/**
@@ -194,9 +189,9 @@ public class InputHandler {
 	/**
 	 * Print all items in database by using the two other print functions
 	 */
-	public void printAllData() {
-		System.out.println(printAllSubjects(dbCon.connect()));
+	public void printAllData(Connection connection) {
+		System.out.println(printAllSubjects(connection));
 		System.out.println("");
-		System.out.println(printAllTeachers(dbCon.connect()));
+		System.out.println(printAllTeachers(connection));
 	}
 }

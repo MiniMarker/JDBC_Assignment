@@ -1,13 +1,13 @@
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
 
-public class DBConnection {
+public class DBConnection  {
 
-	MysqlDataSource ds;
 	private String dbName;
 	private String host;
 	private String userName;
@@ -22,7 +22,7 @@ public class DBConnection {
 	 */
 	public Connection connect() {
 		try {
-			ds = new MysqlDataSource();
+			MysqlDataSource ds = new MysqlDataSource();
 			ds.setDatabaseName(dbName);
 			ds.setServerName(host);
 			ds.setUser(userName);
@@ -44,12 +44,10 @@ public class DBConnection {
 
 		String filepath = "dbConfig.properties";
 
-		try {
-			InputStream input = DBConnection.class.getClassLoader().getResourceAsStream(filepath);
+		try (InputStream input = DBConnection.class.getClassLoader().getResourceAsStream(filepath)) {
 
 			if (input == null) {
-				System.out.println("Unable to read file at " + filepath);
-				return;
+				throw new FileNotFoundException();
 			}
 
 			props.load(input);
