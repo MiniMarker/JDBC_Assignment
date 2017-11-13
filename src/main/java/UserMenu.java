@@ -169,7 +169,7 @@ public class UserMenu {
 			case "4":
 				System.out.println("\n------------------------------------------- ALL DATA --------------------------------------------");
 				inputHandler = new InputHandler();
-				inputHandler.printAllData();
+				inputHandler.printAllData(dbCon.connect());
 
 				//slutten av menyen, rekursivt kall
 				printDataFromDatabaseMenu();

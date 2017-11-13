@@ -19,6 +19,7 @@ public class DBConnection  {
 
 	/**
 	 * establishes a new MySqlDataSource bu using the properties of the fields
+	 * @return A connection to the database
 	 */
 	public Connection connect() {
 		try {
@@ -76,6 +77,8 @@ public class DBConnection  {
 			stmt.addBatch("DROP SCHEMA IF EXISTS " + dbName);
 			stmt.addBatch("CREATE SCHEMA " + dbName);
 			stmt.executeBatch();
+
+			System.out.println("\n" + dbName + " created..");
 
 		} catch (SQLException sqle) {
 			System.out.println("SQL ERROR! " + sqle.getMessage());

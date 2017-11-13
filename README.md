@@ -9,19 +9,27 @@ Dette README doukumentet inneholder instrukser som trengs for å få løsningen 
 
 **— Maven**
 
-Når du åpner koden i ditt ønskede IDE er det viktig at du kjører enten kommadoen **mvn package**. Dette er for at filene 
-som brukes for å opprette tabellene og fylle dem med data genereres ved bruk av maven.
+Når du åpner koden i ditt ønskede IDE er det viktig at du kjører maven-kommadoen **mvn package**. Dette er for at filene 
+som inneholder SQL-spørringer, og tabelldata som brukes for å opprette tabellene og fylle dem genereres ved bruk av maven.
 
 Disse filene vil bli lagt i mappen target/textfiles.
 
 **— Properties**
 
-I mappen 'resources' en property-fil 'dbConfig'. Denne filen inneholder data som brukes av koden: navn på databasen, navnet på testdatabasen, host, brukernavn og passord for opprettelse og tilkobling til databasen.
-Dette er felter som er nødvendig for deg å endre på for å få prosjektet til å kjøre på din maskin.
+I mappen 'resources' er det en property-fil 'dbConfig'. Denne filen inneholder data som brukes av koden: navn på databasen, 
+navnet på testdatabasen, host, brukernavn og passord for opprettelse og tilkobling til databasen.
+Dette er felter som er **nødvendig** for deg å endre på for å få prosjektet til å kjøre på din maskin.
 
 **— Kjør koden**
 
-For å kjøre koden er alt du trenger å gjøre å kjøre klassen Main
+Etter du har gjort dette er det bare å kjøre UserMenu sin main-metode.
+
+**— Tester**
+
+Jeg har opprettet en ny TestDBConnection klasse som oppretter en ny tilkobling til en testdatabase som er navngitt i 
+property-filen du endre på tidligere. Denne databasen fylles med tabeller og data og innholdet blir sjekket i testene i
+klassen DatabaseTest.
+Databasen blir også slettet etter hver fullført test.
 
 ### Enjoy
 

@@ -1,7 +1,4 @@
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 
 import java.sql.*;
 
@@ -14,11 +11,11 @@ import static org.junit.Assert.assertTrue;
 
 public class DatabaseTests {
 
-	private TestDBConnection testCon;
+	private TestDBConnection testCon = new TestDBConnection();
 
-	@Before
-	public void setup(){
-		testCon = new TestDBConnection();
+	@BeforeClass
+	public static void setup(){
+		TestDBConnection testCon = new TestDBConnection();
 		assertTrue(testCon.setupCheck());
 
 		DBHandler dbHandler = new DBHandler();
@@ -27,17 +24,12 @@ public class DatabaseTests {
 	}
 
 	@AfterClass
-	public static void tearDown() {
-		TestDBConnection testDBConnection = new TestDBConnection();
+	public static void tearDown() throws SQLException {
+		TestDBConnection testCon = new TestDBConnection();
 
-		try (Connection con = testDBConnection.connect();
-		     Statement stmt = con.createStatement()) {
+		Statement stmt = testCon.connect().createStatement();
 
-			stmt.executeQuery("DROP SCHEMA TestTimetableWesterdals");
-
-		} catch (SQLException sqle){
-			sqle.getMessage();
-		}
+		stmt.executeUpdate("DROP SCHEMA TestTimetableWesterdals");
 	}
 
 	@Test

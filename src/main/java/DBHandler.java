@@ -55,7 +55,7 @@ public class DBHandler {
 	/**
 	 * This method reads text from a file and returns it as a string.
 	 * @param filepath the absolute file path to the .txt file.
-	 * @return a string of the file by using a StringBuilder, in this intance a SQL-string.
+	 * @return a string of the file by using a StringBuilder, in this intance a SQL-query.
 	 */
 	private String readSqlFile(String filepath) {
 

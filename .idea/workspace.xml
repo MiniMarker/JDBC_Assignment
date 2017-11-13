@@ -2,17 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd29f1cc-a93b-4809-8cff-bde18e782272" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ReadProperties.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/WesterdalsTimetable-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/WesterdalsTimetable-1.0-SNAPSHOT.jar" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/WesterdalsTimetable-1.0-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Subjects.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DBConnection.class" afterPath="$PROJECT_DIR$/target/classes/DBConnection.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DBHandler.class" afterPath="$PROJECT_DIR$/target/classes/DBHandler.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/InputHandler.class" afterPath="$PROJECT_DIR$/target/classes/InputHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/UserMenu.class" afterPath="$PROJECT_DIR$/target/classes/UserMenu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/DatabaseTests.class" afterPath="$PROJECT_DIR$/target/test-classes/DatabaseTests.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/TestDBConnection.class" afterPath="$PROJECT_DIR$/target/test-classes/TestDBConnection.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/f3374925-41d8-444f-b4a8-9ae4b602ee09.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/f3374925-41d8-444f-b4a8-9ae4b602ee09.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DBConnection.java" afterPath="$PROJECT_DIR$/src/main/java/DBConnection.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DBHandler.java" afterPath="$PROJECT_DIR$/src/main/java/DBHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/InputHandler.java" afterPath="$PROJECT_DIR$/src/main/java/InputHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/UserMenu.java" afterPath="$PROJECT_DIR$/src/main/java/UserMenu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/DatabaseTests.java" afterPath="$PROJECT_DIR$/src/test/java/DatabaseTests.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -48,18 +57,6 @@
         <item name="@localhost" type="e3449647:DbNodeDescriptor" />
         <item name="TimetableWesterdals" type="e3449647:DbNodeDescriptor" />
       </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="@localhost" type="e3449647:DbNodeDescriptor" />
-        <item name="TimetableWesterdals" type="e3449647:DbNodeDescriptor" />
-        <item name="Subject" type="e3449647:DbNodeDescriptor" />
-      </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="@localhost" type="e3449647:DbNodeDescriptor" />
-        <item name="TimetableWesterdals" type="e3449647:DbNodeDescriptor" />
-        <item name="Teacher" type="e3449647:DbNodeDescriptor" />
-      </path>
     </expand>
     <select />
   </component>
@@ -85,26 +82,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBConnection.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DBConnection.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/DBConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11">
-              <caret line="26" column="24" lean-forward="false" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+            <state relative-caret-position="387">
+              <caret line="80" column="34" lean-forward="false" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1510563127462" expanded="true" signature="1758:1780" ph="DROP SCHEMA " />
-                <marker date="1510563127462" expanded="true" signature="1811:1825" ph="CREATE SCHEM... missingValue" />
+                <element signature="e#350#351#0" expanded="true" />
+                <element signature="e#373#374#0" expanded="true" />
+                <marker date="1510567269199" expanded="true" signature="1800:1822" ph="DROP SCHEMA " />
+                <marker date="1510567269199" expanded="true" signature="1853:1867" ph="CREATE SCHEM... missingValue" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReadProperties.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ReadProperties.java">
+      <file leaf-file-name="TestDBConnection.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/TestDBConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-              <folding />
+            <state relative-caret-position="-261">
+              <caret line="28" column="22" lean-forward="false" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+              <folding>
+                <marker date="1510565832945" expanded="true" signature="1969:1991" ph="DROP SCHEMA " />
+                <marker date="1510565832945" expanded="true" signature="2027:2041" ph="CREATE SCHEM... missingValue" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -112,11 +114,11 @@
       <file leaf-file-name="DBHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/DBHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+            <state relative-caret-position="148">
+              <caret line="57" column="41" lean-forward="false" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
               <folding>
-                <marker date="1510563549927" expanded="true" signature="513:541" ph="DROP TABLE I... " />
-                <marker date="1510563549927" expanded="true" signature="564:592" ph="DROP TABLE I... " />
+                <marker date="1510566199363" expanded="true" signature="513:541" ph="DROP TABLE I... " />
+                <marker date="1510566199363" expanded="true" signature="564:592" ph="DROP TABLE I... " />
               </folding>
             </state>
           </provider>
@@ -141,12 +143,50 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SECOND">
-              <first_editor relative-caret-position="315">
-                <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="465">
+                <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
                 <folding />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatabaseTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/DatabaseTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1510567017379" expanded="true" signature="739:774" ph="DROP SCHEMA " />
+                <marker date="1510567017379" expanded="true" signature="955:976" ph="SELECT * FRO... Subject" />
+                <marker date="1510567017379" expanded="true" signature="1486:1500" ph="SELECT * FRO... Subject" />
+                <marker date="1510567017379" expanded="true" signature="1486:1507" ph="SELECT * FRO... Teacher" />
+                <marker date="1510567017379" expanded="true" signature="2714:2735" ph="SELECT * FRO... Subject" />
+                <marker date="1510567017379" expanded="true" signature="3091:3112" ph="SELECT * FRO... Teacher" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserMenu.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/UserMenu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="171" column="57" lean-forward="false" selection-start-line="171" selection-start-column="57" selection-end-line="171" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f3374925-41d8-444f-b4a8-9ae4b602ee09/console.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -157,6 +197,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -199,21 +240,22 @@
         <option value="$PROJECT_DIR$/src/main/java/UI.java" />
         <option value="$PROJECT_DIR$/files/createSubjectTeacherTableSql.sql" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
-        <option value="$PROJECT_DIR$/src/test/java/TestDBConnection.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main/java/UserMenu.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/test/java/DatabaseTests.java" />
         <option value="$PROJECT_DIR$/target/textfiles/createSubjectTeacherTableSql.sql" />
         <option value="$PROJECT_DIR$/target/textfiles/subjects.csv" />
         <option value="$PROJECT_DIR$/target/textfiles/createSubjectTableSql.sql" />
         <option value="$PROJECT_DIR$/info.txt" />
         <option value="$PROJECT_DIR$/src/main/resources/dbConfig.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/DBConnection.java" />
         <option value="$PROJECT_DIR$/src/main/java/InputHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DBHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/ReadProperties.java" />
+        <option value="$PROJECT_DIR$/src/test/java/TestDBConnection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DBConnector.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DBHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/UserMenu.java" />
+        <option value="$PROJECT_DIR$/src/test/java/DatabaseTests.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/DBConnection.java" />
       </list>
     </option>
   </component>
@@ -347,13 +389,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WesterdalsTimetable" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Innlevering_1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="WesterdalsTimetable" type="b2602c69:ProjectViewProjectNode" />
@@ -871,9 +906,9 @@
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.UserMenu" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.DatabaseTests" />
-        <item index="2" class="java.lang.String" itemvalue="Application.DBHandler" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.DatabaseTests.subjectSetUpCheckTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DatabaseTests.subjectSetUpCheckTest" />
+        <item index="3" class="java.lang.String" itemvalue="Application.DBHandler" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -940,44 +975,44 @@
       <workItem from="1510227466686" duration="4233000" />
       <workItem from="1510232558941" duration="1640000" />
       <workItem from="1510333956134" duration="1710000" />
-      <workItem from="1510562839931" duration="1307000" />
+      <workItem from="1510562839931" duration="3609000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DatabaseTests - 2017.11.09 at 11h 53m 01s.xml">
+    <history-entry file="DatabaseTests - 2017.11.13 at 10h 50m 51s.xml">
       <configuration name="DatabaseTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DatabaseTests - 2017.11.09 at 14h 31m 20s.xml">
+    <history-entry file="DatabaseTests - 2017.11.13 at 10h 51m 39s.xml">
       <configuration name="DatabaseTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DatabaseTests - 2017.11.09 at 14h 32m 13s.xml">
+    <history-entry file="DatabaseTests - 2017.11.13 at 10h 51m 53s.xml">
       <configuration name="DatabaseTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DatabaseTests - 2017.11.09 at 14h 32m 53s.xml">
+    <history-entry file="DatabaseTests - 2017.11.13 at 10h 54m 24s.xml">
       <configuration name="DatabaseTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DatabaseTests - 2017.11.09 at 14h 33m 06s.xml">
+    <history-entry file="DatabaseTests - 2017.11.13 at 10h 56m 33s.xml">
       <configuration name="DatabaseTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DatabaseTests - 2017.11.09 at 14h 37m 32s.xml">
+    <history-entry file="DatabaseTests - 2017.11.13 at 10h 57m 00s.xml">
       <configuration name="DatabaseTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DatabaseTests - 2017.11.09 at 14h 39m 13s.xml">
+    <history-entry file="DatabaseTests - 2017.11.13 at 10h 59m 59s.xml">
       <configuration name="DatabaseTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DatabaseTests_setUpCheckTest - 2017.11.07 at 21h 58m 18s.xml">
-      <configuration name="DatabaseTests.setUpCheckTest" configurationId="JUnit" />
+    <history-entry file="DatabaseTests - 2017.11.13 at 11h 01m 12s.xml">
+      <configuration name="DatabaseTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DatabaseTests_setUpCheckTest - 2017.11.07 at 21h 59m 14s.xml">
-      <configuration name="DatabaseTests.setUpCheckTest" configurationId="JUnit" />
+    <history-entry file="DatabaseTests - 2017.11.13 at 11h 01m 36s.xml">
+      <configuration name="DatabaseTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DatabaseTests_subjectSetUpCheckTest - 2017.11.09 at 11h 53m 19s.xml">
+    <history-entry file="DatabaseTests_subjectSetUpCheckTest - 2017.11.13 at 10h 59m 46s.xml">
       <configuration name="DatabaseTests.subjectSetUpCheckTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122424000" />
+    <option name="totallyTimeSpent" value="124726000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -999,14 +1034,14 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.22466423" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15087281" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15024938" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30665162" sideWeight="0.53258145" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30777904" sideWeight="0.46741855" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15523691" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15018316" sideWeight="0.8722689" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14962594" sideWeight="0.8722689" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1071,7 +1106,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="18" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1080,7 +1115,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Teachers.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Stopwatch.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Teacher.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Subject_Teacher.java" />
@@ -1161,13 +1195,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/RulesController.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/DBConnectionTest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/UI.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Subjects.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/files/teachers.csv" />
     <entry file="file://$PROJECT_DIR$/files/rooms.csv" />
     <entry file="file://$PROJECT_DIR$/files/createTeacherTableSql.sql" />
@@ -1181,50 +1208,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/UserMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-          <folding>
-            <element signature="e#351#352#0" expanded="false" />
-            <element signature="e#372#373#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestDBConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="712">
-          <caret line="102" column="21" lean-forward="false" selection-start-line="102" selection-start-column="21" selection-end-line="102" selection-end-column="21" />
-          <folding>
-            <marker date="1510089037380" expanded="true" signature="1978:2000" ph="DROP SCHEMA " />
-            <marker date="1510089037380" expanded="true" signature="2036:2050" ph="CREATE SCHEM... missingValue" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f3374925-41d8-444f-b4a8-9ae4b602ee09/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/DatabaseTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-          <folding>
-            <marker date="1510234732682" expanded="true" signature="800:835" ph="DROP SCHEMA " />
-            <marker date="1510234732682" expanded="true" signature="1074:1095" ph="SELECT * FRO... Subject" />
-            <marker date="1510234732682" expanded="true" signature="1605:1619" ph="SELECT * FRO... Subject" />
-            <marker date="1510234732682" expanded="true" signature="1605:1626" ph="SELECT * FRO... Teacher" />
-            <marker date="1510234732682" expanded="true" signature="2833:2854" ph="SELECT * FRO... Subject" />
-            <marker date="1510234732682" expanded="true" signature="3210:3231" ph="SELECT * FRO... Teacher" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/target/textfiles/teachers.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1263,26 +1246,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="315">
-            <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/dbConfig.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Subjects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ReadProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DBConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1303,32 +1294,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DBHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+        <state relative-caret-position="148">
+          <caret line="57" column="41" lean-forward="false" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
           <folding>
-            <marker date="1510563549927" expanded="true" signature="513:541" ph="DROP TABLE I... " />
-            <marker date="1510563549927" expanded="true" signature="564:592" ph="DROP TABLE I... " />
+            <marker date="1510566199363" expanded="true" signature="513:541" ph="DROP TABLE I... " />
+            <marker date="1510566199363" expanded="true" signature="564:592" ph="DROP TABLE I... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestDBConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-261">
+          <caret line="28" column="22" lean-forward="false" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+          <folding>
+            <marker date="1510565832945" expanded="true" signature="1969:1991" ph="DROP SCHEMA " />
+            <marker date="1510565832945" expanded="true" signature="2027:2041" ph="CREATE SCHEM... missingValue" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f3374925-41d8-444f-b4a8-9ae4b602ee09/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/UserMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="171" column="57" lean-forward="false" selection-start-line="171" selection-start-column="57" selection-end-line="171" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="465">
+            <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/DatabaseTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1510567017379" expanded="true" signature="739:774" ph="DROP SCHEMA " />
+            <marker date="1510567017379" expanded="true" signature="955:976" ph="SELECT * FRO... Subject" />
+            <marker date="1510567017379" expanded="true" signature="1486:1500" ph="SELECT * FRO... Subject" />
+            <marker date="1510567017379" expanded="true" signature="1486:1507" ph="SELECT * FRO... Teacher" />
+            <marker date="1510567017379" expanded="true" signature="2714:2735" ph="SELECT * FRO... Subject" />
+            <marker date="1510567017379" expanded="true" signature="3091:3112" ph="SELECT * FRO... Teacher" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DBConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11">
-          <caret line="26" column="24" lean-forward="false" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+        <state relative-caret-position="387">
+          <caret line="80" column="34" lean-forward="false" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1510563127462" expanded="true" signature="1758:1780" ph="DROP SCHEMA " />
-            <marker date="1510563127462" expanded="true" signature="1811:1825" ph="CREATE SCHEM... missingValue" />
+            <element signature="e#350#351#0" expanded="true" />
+            <element signature="e#373#374#0" expanded="true" />
+            <marker date="1510567269199" expanded="true" signature="1800:1822" ph="DROP SCHEMA " />
+            <marker date="1510567269199" expanded="true" signature="1853:1867" ph="CREATE SCHEM... missingValue" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ReadProperties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
