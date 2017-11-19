@@ -111,10 +111,12 @@ public class InputHandler {
 			ResultSet rs = prepSingeSubjectStmt.executeQuery();
 
 			while (rs.next()) {
-				text = (rs.getString(1) + " "
-						+ rs.getString(2) + " "
-						+ rs.getDouble(3) + " "
-						+ rs.getInt(4));
+				text = String.format("Emnekode: %-20s Emnenavn: %-35s Varlighet: %-20.2f Antall påmeldte: %-10d",
+						rs.getString(1), rs.getString(2), rs.getDouble(3),rs.getInt(4));
+			}
+
+			if (text == null){
+				return "Kunne ikke finne rad i tabellen med fagkode = " + code;
 			}
 
 		} catch (SQLException sqle) {
@@ -139,11 +141,11 @@ public class InputHandler {
 			stringBuilder = new StringBuilder();
 
 			while (rs.next()) {
-				stringBuilder.append(
-						"Emnekode: " + rs.getString(1) +
-						" Enmenavn: " + rs.getString(2) +
-						" Varighet: " + rs.getDouble(3) +
-						" Antall påmeldte: " + rs.getInt(4) + "\n");
+
+				String text = String.format("Emnekode: %-20s Emnenavn: %-35s Varlighet: %-20.2f Antall påmeldte: %-10d",
+						rs.getString(1), rs.getString(2), rs.getDouble(3),rs.getInt(4));
+
+				stringBuilder.append(text + "\n");
 			}
 
 			result = stringBuilder.toString();
@@ -171,11 +173,11 @@ public class InputHandler {
 			stringBuilder = new StringBuilder();
 
 			while (rs.next()) {
-				stringBuilder.append(
-						"Lærerid: " + rs.getInt(1) +
-						" Navn: " + rs.getString(2) +
-						" Ikke ledig: " + rs.getString(3) +
-						" Kontaktinfo: " + rs.getString(4) + "\n");
+
+				String text = String.format("Id: %-10d Navn: %-20s Ikke ledig: %-10s Kontakt: %-20s",
+						rs.getInt(1), rs.getString(2), rs.getString(3),rs.getString(4));
+
+				stringBuilder.append(text + "\n");
 			}
 
 			result = stringBuilder.toString();
@@ -190,8 +192,17 @@ public class InputHandler {
 	 * Print all items in database by using the two other print functions
 	 */
 	public void printAllData(Connection connection) {
-		System.out.println(printAllSubjects(connection));
-		System.out.println("");
-		System.out.println(printAllTeachers(connection));
+
+		try (Connection con = connection) {
+
+			System.out.println("\n------------------------------------------- SUBJECTS --------------------------------------------");
+			System.out.println(printAllSubjects(con));
+			System.out.println("\n------------------------------------------- TEACHERS --------------------------------------------");
+			System.out.println(printAllTeachers(con));
+
+		} catch (SQLException sqle){
+			sqle.getMessage();
+		}
+
 	}
 }

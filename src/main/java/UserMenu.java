@@ -129,7 +129,6 @@ public class UserMenu {
 						"1: Print all data fra tabellen 'subject'\n" +
 						"2: Print ett subject spesifisert ved emnekode\n" +
 						"3: Print all data fra tabellen 'teacher'\n" +
-						"4: Print all data i alle tabellene i databasen\n" +
 						"9: Tilbake\n" +
 						"0: Avslutt\n" +
 						"-------------------------------------------------------------------------------------------------");
@@ -153,6 +152,8 @@ public class UserMenu {
 				inputHandler = new InputHandler();
 				System.out.println(inputHandler.printSingleSubject(dbCon.connect(), emnekode) + "\n");
 
+
+
 				//slutten av menyen, rekursivt kall
 				printDataFromDatabaseMenu();
 				break;
@@ -161,15 +162,6 @@ public class UserMenu {
 				System.out.println("\n------------------------------------------- TEACHERS --------------------------------------------");
 				inputHandler = new InputHandler();
 				System.out.println(inputHandler.printAllTeachers(dbCon.connect()));
-
-				//slutten av menyen, rekursivt kall
-				printDataFromDatabaseMenu();
-				break;
-
-			case "4":
-				System.out.println("\n------------------------------------------- ALL DATA --------------------------------------------");
-				inputHandler = new InputHandler();
-				inputHandler.printAllData(dbCon.connect());
 
 				//slutten av menyen, rekursivt kall
 				printDataFromDatabaseMenu();
